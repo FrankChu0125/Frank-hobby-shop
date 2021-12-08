@@ -1,0 +1,26 @@
+.wrapper-footer {
+  background-color: rgb(245, 245, 245);
+  text-align: center;
+  font-size: 18px;
+  padding: 20px 0;
+  color: #888;
+}
+.wrapper-footer footer {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
+a {
+  text-decoration: none;
+}
+.wrapper-footer .footer .sns .sns-is {
+  display: inline;
+  text-decoration: none;
+}
+.wrapper-footer .footer .sns .sns-fb {
+  display: inline;
+  text-decoration: none;
+}
+.wrapper-footer .footer .sns .sns-ln {
+  display: inline;
+  text-decoration: none;
+}
