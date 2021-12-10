@@ -37,15 +37,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.wrap-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #444444;
-  position: fixed;
-  z-index: 99999;
-}
+<style lang="scss">
 /* 一般尺寸 */
 @media screen and (min-width: 768px) {
   .wrap-header header {
@@ -55,9 +47,9 @@ export default {
     align-items: center;
     height: 100px;
     padding: 0 48px;
-  }
-  .wrap-header .hamburger {
-    display: none;
+    .hamburger {
+      display: none;
+    }
   }
 }
 /* 手機尺寸 */
@@ -67,22 +59,29 @@ export default {
     height: 16vmin;
     padding: 0;
   }
-  .wrap-header .header-nav .header-menu {
-    display: none;
-    position: absolute;
-    top: 16vmin;
-    left: 0;
-    background-color: #00446e;
-    width: 100%;
-  }
-  .wrap-header .header-nav .cart {
-    display: block;
-    position: relative;
-    content: "";
-    width: 20px;
-    height: 21px;
-    margin-right: 6vw;
-    margin-left: 6vw;
+  .wrap-header .header-nav {
+    .header-menu {
+      display: none;
+      position: absolute;
+      top: 90px;
+      left: 0;
+      background-color: #00446e;
+      width: 100%;
+      li a {
+        border-bottom: 1px solid #c2c2c2;
+        font-size: 4.68vmin;
+        line-height: 3em;
+      }
+    }
+    .cart {
+      display: block;
+      position: relative;
+      content: "";
+      width: 20px;
+      height: 21px;
+      margin-right: 6vw;
+      margin-left: 6vw;
+    }
   }
   .wrap-header header .hamburger {
     display: flex;
@@ -93,25 +92,24 @@ export default {
     padding-right: 6vw;
     padding-left: 6vw;
     margin-right: 6vw;
+    i {
+      transition: all 0.4s;
+      width: 30px;
+      height: 2px;
+      background-color: #c2c2c2;
+      position: relative;
+    }
+    i::after {
+      top: -8px;
+      left: 0;
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background-color: #c2c2c2;
+    }
   }
 
-  .wrap-header .hamburger i {
-    transition: all 0.4s;
-    width: 30px;
-    height: 2px;
-    background-color: #c2c2c2;
-    position: relative;
-  }
-
-  .wrap-header .hamburger i::after {
-    top: -8px;
-    left: 0;
-    position: absolute;
-    content: "";
-    width: 30px;
-    height: 2px;
-    background-color: #c2c2c2;
-  }
   .wrap-header header .logo {
     margin: 0;
     justify-content: center;
@@ -121,76 +119,79 @@ export default {
     position: absolute;
     top: -16vmin;
   }
-  .wrap-header .header-nav .header-menu {
-    width: 100%;
-    left: 0;
-    position: absolute;
-    top: 15.9vmin;
-  }
-  .wrap-header .header-nav .header-menu li a {
-    border-bottom: 1px solid #c2c2c2;
-    font-size: 4.68vmin;
-    line-height: 3em;
-  }
 }
+
+// logo
 .logo {
   display: flex;
   align-items: center;
   padding: 0 5px;
-}
-.logo > img {
-  border-radius: 50%;
-}
-.logo .text {
-  font-size: 32px;
-  color: #fff;
-  bottom: 0;
-}
-.wrap-header .header-nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  -webkit-box-pack: end;
-  font-size: 15px;
-  height: 100%;
-}
-.header-menu {
-  display: flex;
+  img {
+    border-radius: 50%;
+  }
+  .text {
+    font-size: 32px;
+    color: #fff;
+    bottom: 0;
+  }
 }
 
-.wrap-header nav a {
-  font-size: 16px;
-  color: #fff;
-  text-decoration: none;
-  display: inline-block;
-  line-height: 100px;
-  padding: 0px 10px;
+.wrap-header {
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color: #444444;
+  position: fixed;
+  z-index: 999;
+  .header-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    -webkit-box-pack: end;
+    font-size: 15px;
+    height: 100%;
+  }
+  .header-menu {
+    display: flex;
+  }
+  nav {
+    a {
+      font-size: 16px;
+      color: #fff;
+      text-decoration: none;
+      display: inline-block;
+      line-height: 100px;
+      padding: 0px 10px;
+      width: 100%;
+    }
+    .cart {
+      position: relative;
+      width: 20px;
+      height: 21px;
+      background-image: url("../assets/img/cart.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: 25px;
+      .cart-count {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -5px;
+        right: 8px;
+        font-size: 20px;
+        background-color: #c2c2c2;
+        color: #444444;
+        text-align: center;
+        line-height: 12px;
+        border-radius: 100%;
+      }
+    }
+  }
+  input {
+    display: none;
+  }
 }
-.wrap-header nav .cart {
-  position: relative;
-  width: 20px;
-  height: 21px;
-  background-image: url("../assets/img/cart.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-.wrap-header nav .cart .cart-count {
-  width: 16px;
-  height: 16px;
-  position: absolute;
-  top: -5px;
-  right: 8px;
-  font-size: 20px;
-  background-color: #c2c2c2;
-  color: #444444;
-  text-align: center;
-  line-height: 12px;
-  border-radius: 100%;
-}
-.wrap-header input {
-  display: none;
-}
+
 #switch:checked ~ .header-menu {
   display: block;
 }
