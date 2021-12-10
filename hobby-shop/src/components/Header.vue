@@ -8,7 +8,7 @@
         <a class="logo img" href="#"
           ><img src="https://picsum.photos/40/40?random=1"
         /></a>
-        <p class="logo text" href="#">Frank's hobby</p>
+        <p class="logo text" href="#">123</p>
       </div>
       <nav class="header-nav">
         <input type="checkbox" id="switch" />
