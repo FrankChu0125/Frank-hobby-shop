@@ -15,7 +15,9 @@
     "sass": "^1.44.0",
     "sass-loader": "^10.2.0",
     "vue": "^3.2.24",
-    "vue-loading-overlay": "^4.0.4"
+    "vue-loading-overlay": "^4.0.4",
+    "vue3-carousel": "^0.1.33",
+    "vueperslides": "^3.3.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
