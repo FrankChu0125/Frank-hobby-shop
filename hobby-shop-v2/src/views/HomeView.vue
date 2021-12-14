@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <Header />
     <Slideshows />
     <News />
@@ -13,7 +13,7 @@ import Slideshows from "../components/Slideshows.vue";
 import News from "../components/News.vue";
 import Product from "../components/Product.vue";
 export default {
-  name: "Home",
+  name: "HomeView",
   components: {
     Header,
     Slideshows,
@@ -22,6 +22,3 @@ export default {
   },
 };
 </script>
-
-<style >
-</style>

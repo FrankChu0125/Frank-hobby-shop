@@ -1,18 +1,14 @@
 <template>
-  <!-- <div id="app"> -->
-    <Home />
-  <!-- </div> -->
+  <div id="app">
+    <nav>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
-<script>
-import Home from "./views/Home.vue";
-export default {
-  name: "app",
-  components: {
-    Home,
-  },
-};
-</script>
-<style>
+
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,6 +16,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
 html,
 body,
 div,

@@ -5,7 +5,6 @@
         class="carousel__item"
         :style="{ backgroundImage: `url(${slide.img})` }"
       >
-        <!-- {{ imgArray }} -->
         {{ slide.title }}
       </div>
     </Slide>
@@ -38,6 +37,7 @@ export default {
         {
           title: "hp",
           img: hp,
+          link: "https://www.harrypottermagicawakened.com/tw/",
         },
         {
           title: "po",
@@ -46,6 +46,7 @@ export default {
         {
           title: "hp3",
           img: hp3,
+          link: "https://www.wizardingworld.com/",
         },
         {
           title: "cat",
@@ -59,16 +60,16 @@ export default {
       bgimgUrl: "",
     };
   },
-  mounted() {
-    console.log(this.imgArray);
-  },
-  methods() {},
 };
 </script>
 
 <style >
+a {
+  width: 100%;
+  text-decoration: none;
+}
 .slideshows {
-  padding-top: 40px;
+  padding-top: 100px;
 }
 .carousel__item {
   min-height: 500px;
