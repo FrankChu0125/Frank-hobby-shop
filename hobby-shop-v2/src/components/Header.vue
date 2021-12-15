@@ -5,16 +5,16 @@
         <i></i>
       </label>
       <div class="logo">
-        <a class="logo img" href="#"
-          ><img src="https://picsum.photos/40/40?random=1"
-        /></a>
-        <p class="logo text" href="#">123</p>
+        <router-link class="logo img" to="/"
+          ><img src="https://picsum.photos/40/40?random=1" />
+          <p class="logo text">123</p>
+        </router-link>
       </div>
       <nav class="header-nav">
         <input type="checkbox" id="switch" />
         <ul class="header-menu">
           <li>
-            <a href="#">關於</a>
+            <router-link to="/about">關於</router-link>
           </li>
           <li><a href="#">商城</a></li>
           <li><a href="#">訂單</a></li>
@@ -125,6 +125,7 @@ export default {
   display: flex;
   align-items: center;
   padding: 0 5px;
+  text-decoration: none;
   img {
     border-radius: 50%;
   }
@@ -132,6 +133,7 @@ export default {
     font-size: 32px;
     color: #fff;
     bottom: 0;
+    padding-top: 1.5vw;
   }
 }
 
