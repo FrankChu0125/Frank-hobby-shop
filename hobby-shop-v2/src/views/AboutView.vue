@@ -5,8 +5,9 @@
       <div class="inner">
         <section class="card">
           <h3>
-            <font style="vertical-align: inherit">關於我</font>
+            <font style="vertical-align: inherit">店主</font>
           </h3>
+          <div class="line"></div>
           <div class="col2">
             <dl class="text">
               <dt>
@@ -15,12 +16,14 @@
               <dd>
                 <font style="vertical-align: inherit">朱炤炤</font>
               </dd>
+
               <dt>
                 <font style="vertical-align: inherit">生日</font>
               </dt>
               <dd>
                 <font style="vertical-align: inherit">1996-01-25</font>
               </dd>
+
               <dt>
                 <font style="vertical-align: inherit">技能</font>
               </dt>
@@ -29,16 +32,32 @@
                   >js、ts、cocos、vue、nodejs</font
                 >
               </dd>
+              <dt>
+                <font style="vertical-align: inherit">興趣</font>
+              </dt>
+              <dd>
+                <font style="vertical-align: inherit">找美食、電動、貓咪</font>
+              </dd>
+
+              <dt>
+                <font style="vertical-align: inherit">座右銘</font>
+              </dt>
+              <dd>
+                <font style="vertical-align: inherit"
+                  >價格從來不是商店的問題，是你</font
+                >
+              </dd>
             </dl>
             <div class="img">
-              <img src="https://picsum.photos/300/220?random=5" />
+              <img class="me" src="../assets/img/020.jpg" />
             </div>
           </div>
         </section>
         <section class="card">
           <h3>
-            <font style="vertical-align: inherit">喜歡1:</font>
+            <font style="vertical-align: inherit">選物壹</font>
           </h3>
+          <div class="line"></div>
           <div class="col2">
             <dl class="text">
               <dt>
@@ -95,8 +114,9 @@
         </section>
         <section class="card">
           <h3>
-            <font style="vertical-align: inherit">我喜歡2:</font>
+            <font style="vertical-align: inherit">選物貳</font>
           </h3>
+          <div class="line"></div>
           <div class="col2">
             <dl class="text">
               <dt>
@@ -157,8 +177,9 @@
         </section>
         <section class="card">
           <h3>
-            <font style="vertical-align: inherit">我的貓:</font>
+            <font style="vertical-align: inherit">店貓</font>
           </h3>
+          <div class="line"></div>
           <div class="col2">
             <dl class="text">
               <dt>
@@ -218,8 +239,9 @@
         </section>
         <section class="card">
           <h3>
-            <font style="vertical-align: inherit">我的狗:</font>
+            <font style="vertical-align: inherit">店狗</font>
           </h3>
+          <div class="line"></div>
           <div class="col2">
             <dl class="text">
               <dt>
@@ -295,24 +317,35 @@ export default {
     .card {
       display: block;
       // width: 1080px;
-
+      margin-bottom: 20px;
       h3 {
         font-size: 24px;
         font-weight: 700;
         color: #00446e;
         display: block;
-        text-align: start;
-        padding: 20px 20px;
+        text-align: center;
+        padding: 20px 53px;
+      }
+      .line {
+        width: 70%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin: auto;
+        border: 0.1px solid #b6b4b4;
+        margin-bottom: 25px;
       }
       .col2 {
         width: 1080px;
+        padding: 20px;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         .text {
-          width: 450px;
+          width: 430px;
           dt {
             // width: 100px;
             float: left;
@@ -341,6 +374,28 @@ export default {
             right: 0;
             margin: auto;
           }
+          .me {
+            margin-bottom: 25px;
+          }
+        }
+      }
+    }
+  }
+}
+/* 手機尺寸 */
+@media screen and (max-width: 767px) {
+  .wrapper {
+    .inner .card {
+      h3 {
+        text-align: center;
+      }
+      .col2 {
+        display: block;
+        .text {
+          width: 100%;
+        }
+        .img {
+          margin: 20px;
         }
       }
     }

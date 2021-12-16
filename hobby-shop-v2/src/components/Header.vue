@@ -6,8 +6,8 @@
       </label>
       <div class="logo">
         <router-link class="logo img" to="/"
-          ><img src="https://picsum.photos/40/40?random=1" />
-          <p class="logo text">123</p>
+          ><img src="../assets/img/021.jpg" />
+          <p class="logo text">chao</p>
         </router-link>
       </div>
       <nav class="header-nav">
@@ -16,7 +16,9 @@
           <li>
             <router-link to="/about">關於</router-link>
           </li>
-          <li><a href="#">商城</a></li>
+          <li>
+            <router-link to="/products">商城</router-link>
+          </li>
           <li><a href="#">訂單</a></li>
           <li><a href="#">登入</a></li>
           <li><a href="#">貼圖</a></li>
@@ -128,6 +130,7 @@ export default {
   text-decoration: none;
   img {
     border-radius: 50%;
+    width: 40px;
   }
   .text {
     font-size: 32px;
