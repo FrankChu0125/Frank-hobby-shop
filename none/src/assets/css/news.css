@@ -1,0 +1,74 @@
+/* 手機尺寸 */
+@media screen and (max-width: 767px) {
+  .news-caption {
+    text-align: center;
+    font-size: 2em;
+  }
+  .news .news-item p.news-title {
+    display: block;
+    text-align: center;
+    width: 100%;
+    line-height: 1em;
+    /* font-size: 5em; */
+    padding: -5px;
+  }
+  .news-item {
+    width: 100%;
+    /* padding: 10px 6vw; */
+    font-size: 3vmin;
+    letter-spacing: 0em;
+  }
+  .news .new-item .marquee span {
+    text-align: center;
+    /* font-size: 500px; */
+  }
+}
+
+/* 電腦尺寸 */
+@media screen and (min-width: 768px) {
+  .news-caption {
+    text-align: start;
+  }
+  .news-item {
+    display: flex;
+  }
+}
+
+.news {
+  background-color: #eeeeee;
+  width: 100%;
+  height: 387.6px;
+}
+.news-item {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1080px;
+  align-items: center;
+  font-size: 15px;
+  min-height: 50px;
+  max-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.news-caption {
+  white-space: nowrap;
+  display: block;
+  width: 100%; 
+  line-height: 1em;
+  padding: 20px 0px;
+  font-size: 3em;
+  /* margin: 30px 0px 0px 0px; */
+  font-weight: 550;
+}
+
+.news-item .news-title {
+  padding: 5px;
+  color: #fff;
+  margin-right: 30px;
+  display: inline-block;
+}
+.news-item .red {
+  background-color: #f53f3c;
+}
+.news-item .black {
+  background-color: rgb(134, 134, 134);
+}

@@ -1,0 +1,120 @@
+/* 一般尺寸 */
+@media screen and (min-width: 768px) {
+  .product > ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 手機尺寸 */
+@media screen and (max-width: 767px) {
+  .product > ul {
+    display: block;
+    justify-content: space-around;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .product > ul li figure img {
+    margin-bottom: 30px;
+    width: 60%;
+  }
+}
+.product {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+.product-header {
+  width: 1080px;
+  min-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+.product-header h2 {
+  margin: 0;
+  font-weight: normal;
+  color: #333355;
+  margin-left: 5vw;
+}
+.en {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+.tw {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 600;
+}
+
+.product-header h2 .en {
+  font-size: 42px;
+  margin-right: 24px;
+  letter-spacing: 0.05em;
+  line-height: 1px;
+}
+
+.product-header h2 .tw {
+  line-height: 2em;
+  letter-spacing: 0.05em;
+}
+
+.product > ul li {
+  text-align: center;
+  margin: 0 30px;
+}
+
+.product > ul li figure {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product > ul li figure a {
+  display: block;
+  color: #00446e;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.product > ul li figure img {
+  margin-bottom: 30px;
+}
+
+.product > ul li figure a figcaption {
+  padding-bottom: 18px;
+  display: block;
+}
+
+.product > ul li figure a figcaption .en {
+  font-size: 24px;
+}
+.product > ul li figure a figcaption .tw {
+  font-size: 14px;
+  font-weight: 500;
+}
+.product > ul li figure .red {
+  color: #fff;
+  background-color: red;
+  padding: 0px 6px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+.product > ul li figure .blue {
+  color: #fff;
+  background-color: #0000ff;
+  padding: 0px 6px;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.product > ul li figure a figcaption {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
