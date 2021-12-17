@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frank's Hobby</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <style>
+      * {
+        font-family: "Microsoft JhengHei";
+      }
+      .wrap-header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #444444;
+        position: fixed;
+        z-index: 99999;
+      }
+      /* 一般尺寸 */
+      @media screen and (min-width: 768px) {
+        .wrap-header header {
+          display: flex;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          align-items: center;
+          height: 100px;
+          padding: 0 48px;
+          /* display: none; */
+        }
+        .wrap-header .hamburger {
+          display: none;
+        }
+      }
+      /* 手機尺寸 */
+      @media screen and (max-width: 767px) {
+        .wrap-header header {
+          /* display: flex; */
+          /* justify-content: space-between; */
+          align-items: center;
+          height: 16vmin;
+          padding: 0;
+        }
+        .wrap-header .header-nav .header-menu {
+          display: none;
+          position: absolute;
+          top: 16vmin;
+          left: 0;
+          background-color: #00446e;
+          width: 100%;
+        }
+        .wrap-header .header-nav .cart {
+          display: block;
+          position: relative;
+          content: "";
+          width: 20px;
+          height: 21px;
+          margin-right: 6vw;
+          margin-left: 6vw;
+        }
+        .wrap-header header .hamburger {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          align-items: center;
+          height: 100%;
+          background-color: #00446e;
+          padding-right: 6vw;
+          padding-left: 6vw;
+          margin-right: 6vw;
+        }
+        .wrap-header .hamburger i {
+          transition: all 0.4s;
+          width: 30px;
+          height: 2px;
+          background-color: #c2c2c2;
+          position: relative;
+        }
+        .wrap-header .hamburger i::before {
+          top: -8px;
+          left: 0;
+          position: absolute;
+          content: "";
+          width: 30px;
+          height: 2px;
+          background-color: #c2c2c2;
+        }
+        .wrap-header .hamburger i::after {
+          top: -8px;
+          left: 0;
+          position: absolute;
+          content: "";
+          width: 30px;
+          height: 2px;
+          background-color: #c2c2c2;
+        }
+        .wrap-header header .logo {
+          margin: 0;
+          line-height: 100%;
+          justify-content: center;
+          height: 100%;
+        }
+        .wrap-header nav .cart {
+          position: absolute;
+          top: -16vmin;
+        }
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        padding: 0 5px;
+      }
+      .logo > img {
+        border-radius: 50%;
+      }
+      .logo .text {
+        font-size: 32px;
+        color: #fff;
+        bottom: 0;
+      }
+      .wrap-header .header-nav {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        -webkit-box-pack: end;
+        font-size: 15px;
+        height: 100%;
+      }
+      .header-menu {
+        display: flex;
+        height: 100%;
+      }
+
+      .wrap-header nav a {
+        font-size: 16px;
+        color: #fff;
+        text-decoration: none;
+        display: inline-block;
+        line-height: 100px;
+        padding: 0px 10px;
+        width: 100%;
+      }
+      .wrap-header nav .cart {
+        position: relative;
+        width: 20px;
+        height: 21px;
+        content: "";
+        background-image: url("./img/cart.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .wrap-header nav .cart .cart-count {
+        /* display: block; */
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: -5px;
+        right: 8px;
+        font-size: 20px;
+        background-color: #c2c2c2;
+        color: #444444;
+        text-align: center;
+        line-height: 12px;
+        border-radius: 100%;
+      }
+      .header-menu li {
+        margin-right: 2vw;
+      }
+      /* 進入按鈕 */
+      .goBtn {
+        text-align: center;
+        padding-bottom: 2em;
+      }
+      .goBtn a {
+        white-space: nowrap;
+        background-color: #676767;
+        width: 300px;
+        display: inline-block;
+        text-align: center;
+        line-height: 3em;
+        font-size: 18px;
+        max-width: 100%;
+        margin-top: 40px;
+        color: #fff;
+        font-weight: bold;
+        text-decoration: none;
+      }
+      /* 廣告 */
+      .ad {
+        margin-bottom: 90px;
+      }
+      .ad .sitewidth {
+        max-width: calc(1080px + 12%);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+      }
+      .ad .sitewidth > img {
+        border: 0;
+        border-style: none;
+        vertical-align: bottom;
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="./css/slide.css" />
+    <link rel="stylesheet" href="./css/news.css" />
+    <link rel="stylesheet" href="./css/product.css" />
+    <link rel="stylesheet" href="./css//about.css" />
+    <link rel="stylesheet" href="./css/case.css" />
+    <link rel="stylesheet" href="./css/support.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+  </head>
+  <body>
+    <!-- header區 -->
+    <div class="wrap-header">
+      <header id="header">
+        <div class="hamburger">
+          <i></i>
+        </div>
+        <div class="logo">
+          <a class="logo img" href="#"
+            ><img src="https://picsum.photos/40/40?random=1"
+          /></a>
+          <p class="logo text" href="#">NORMAL</p>
+        </div>
+        <nav class="header-nav">
+          <ul class="header-menu">
+            <li>
+              <a href="#">商城</a>
+            </li>
+            <li><a href="#">關於</a></li>
+            <li><a href="#">訂單</a></li>
+            <li><a href="#">登入</a></li>
+          </ul>
+          <a href="#" class="cart">
+            <span class="cart-count">-</span>
+          </a>
+        </nav>
+      </header>
+    </div>
+
+    <!-- 幻燈片 -->
+    <div class="slideshow-container">
+      <ul class="slides">
+        <li class="slide">
+          <div class="img"></div>
+        </li>
+        <li class="slide">
+          <div class="img"></div>
+        </li>
+        <li class="slide">
+          <div class="img"></div>
+        </li>
+        <div class="slideshow-text">
+          <p class="title">我是標題</p>
+          <span class="content">13215465468797987321</span>
+        </div>
+      </ul>
+    </div>
+
+    <!-- 通知中心 -->
+    <div class="news">
+      <div class="news-item">
+        <p class="news-caption"><span>通知中心</span></p>
+      </div>
+      <div class="news-item">
+        <p class="news-title red">
+          <span>重要通知</span>
+        </p>
+        <div class="marquee">
+          <span>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Laudantium,很重要!!!!!
+          </span>
+        </div>
+      </div>
+      <div class="news-item">
+        <p class="news-title black">通知</p>
+        <div class="marquee">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Laudantium, veniam?
+          </p>
+        </div>
+      </div>
+      <div class="news-item">
+        <p class="news-title black">通知</p>
+        <div class="marquee">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Laudantium, veniam?
+          </p>
+        </div>
+      </div>
+      <div class="news-item">
+        <p class="news-title black">通知</p>
+        <div class="marquee">
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Laudantium, veniam?
+          </p>
+        </div>
+      </div>
+      <p class="goBtn">
+        <a href="#">詳情請見 →</a>
+      </p>
+    </div>
+
+    <!-- 產品 -->
+    <section class="product">
+      <header class="product-header">
+        <h2>
+          <span class="en">PRODUCT</span>
+          <span class="tw">產品介紹</span>
+        </h2>
+      </header>
+      <ul>
+        <li>
+          <figure>
+            <a href="#">
+              <img src="https://picsum.photos/200/300?random=5" />
+              <figcaption>
+                <span class="en">SHOT GUN</span>
+                <br />
+                <span class="tw">這比魔法好用</span>
+                <br />
+                <span class="en">→</span>
+              </figcaption>
+            </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#">
+              <img src="https://picsum.photos/200/300?random=6" />
+              <figcaption>
+                <div class="top-figcaption">
+                  <span class="en">L STAR</span>
+                  <span class="tag red">2021.11.NEW</span>
+                </div>
+                <br />
+                <span class="tw">逼逼啵啵</span>
+                <br />
+                <span class="en">→</span>
+              </figcaption>
+            </a>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <a href="#">
+              <img src="https://picsum.photos/200/300?random=7" />
+              <figcaption>
+                <div class="top-figcaption">
+                  <span class="en">R301</span>
+                  <span class="tag blue">2021.05.RENEWRAL</span>
+                </div>
+                <br />
+                <span class="tw">瓜拉瓜拉瓜啦啦</span>
+                <br />
+                <span class="en">→</span>
+              </figcaption>
+            </a>
+          </figure>
+        </li>
+      </ul>
+      <p class="goBtn">
+        <a href="#">產品介紹 →</a>
+      </p>
+    </section>
+
+    <!-- 廣告 -->
+    <section class="ad">
+      <div class="sitewidth">
+        <img src="https://picsum.photos/1330/310?random=8" alt="我是廣告" />
+      </div>
+    </section>
+
+    <!-- 關於 -->
+    <section class="about">
+      <div class="left"></div>
+      <div class="right">
+        <div class="inner">
+          <h2>
+            <span class="en">ABOUT</span>
+            <br />
+            <span class="tw">我們是NOMALLL啦!</span>
+          </h2>
+          <h3>超快、超猛、超厲害、超屌DERRRR</h3>
+          <div class="goBtn">
+            <div class="childBtn">
+              <p>go NORMALL →</p>
+            </div>
+            <div class="childBtn">
+              <p>選擇理由?! →</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 施工案例 -->
+    <section class="cases">
+      <header class="cases-header">
+        <h2>施工案例</h2>
+        <p class="link">
+          <a href="#" class="link-arrow">施工立案一覽 →</a>
+        </p>
+        <p class="text">真實的用戶產品體驗介紹。</p>
+      </header>
+      <div class="cases-inner">
+        <div class="inner-item">
+          <a href="#" class="link">
+            <div
+              class="img"
+              style="
+                background-image: url(https://picsum.photos/720/720?random=10);
+              "
+            >
+              <span>注目物件</span>
+            </div>
+            <p class="date">案例:No.087 2021-11-12</p>
+            <h3>(公司) 台中某處的咖啡店</h3>
+            <p class="excert">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+              deserunt laudantium, adipisci eius laborum delectus mollitia
+              suscipit provident quidem at, itaque inventore ab voluptatem
+              aperiam?
+            </p>
+            <ul class="cases-tags">
+              <li>台中</li>
+              <li>店鋪</li>
+              <li>NORMALL</li>
+              <li>極選</li>
+              <li>...</li>
+            </ul>
+          </a>
+        </div>
+        <div class="inner-item">
+          <a href="#" class="link">
+            <div
+              class="img"
+              style="
+                background-image: url(https://picsum.photos/720/720?random=11);
+              "
+            >
+              <span>注目物件</span>
+            </div>
+            <p class="date">案例:No.087 2021-11-12</p>
+            <h3>(住家) 台南古厝重建</h3>
+            <p class="excert">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
+              deserunt laudantium, adipisci eius laborum delectus mollitia
+              suscipit provident quidem at, itaque inventore ab voluptatem
+              aperiam?
+            </p>
+            <ul class="cases-tags">
+              <li>台南</li>
+              <li>住家</li>
+              <li>X-FU</li>
+              <li>超級</li>
+              <li>...</li>
+            </ul>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 幫助 -->
+    <section class="support">
+      <header>
+        <h2>
+          <span class="en">SUPPORT</span>
+          <span class="tw" style="font-size: 20px">你有需要我不要</span>
+        </h2>
+      </header>
+      <ul class="support-link">
+        <li
+          class="link-item"
+          style="background-image: url(https://picsum.photos/80/50?random=15)"
+        >
+          <a href="">
+            <figure>
+              <strong>行動服務</strong>
+              <figcaption>
+                產品專家訪問:
+                <br />
+                出差測量安裝服務
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li
+          class="link-item"
+          style="background-image: url(https://picsum.photos/80/50?random=16)"
+        >
+          <a href="#">
+            <figure>
+              <strong>展示間</strong>
+              <figcaption>
+                直營店面最新消息:
+                <br />
+                讓你完美體驗NORMALL啦
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li
+          class="link-item"
+          style="background-image: url(https://picsum.photos/80/50?random=17)"
+        >
+          <a href="#">
+            <figure>
+              <strong>資料請求</strong>
+              <figcaption>
+                產品目錄、規格...等等
+                <br />
+                點吉這裡獲取更多資訊
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li
+          class="link-item"
+          style="background-image: url(https://picsum.photos/80/50?random=18)"
+        >
+          <a href="#">
+            <figure>
+              <strong>其他請求</strong>
+              <figcaption>
+                如果您對產品有任何疑慮
+                <br />
+                gggyggggygwissxcxvx
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+        <li
+          class="link-item-tel"
+          style="background-image: url(https://picsum.photos/80/50?random=19)"
+        >
+          <a href="#">
+            <figure>
+              <strong>貼心ㄉ電話聯絡資料</strong>
+              <figcaption>
+                產品、銷售服務上，如果您有問題請洽:
+                <br />
+                0800-878787878787878787
+              </figcaption>
+            </figure>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- footer 底下 -->
+    <div class="wrapper-footer">
+      <footer class="footer">
+        <div class="sns">
+          <ul>
+            <li class="sns-is">
+              <a href="https://www.instagram.com/">
+                <img
+                  src="https://img.icons8.com/ios/40/000000/instagram-new--v3.png"
+                />
+              </a>
+            </li>
+            <li class="sns-fb">
+              <a href="https://www.facebook.com/">
+                <img
+                  src="https://img.icons8.com/ios-filled/40/000000/facebook-new.png"
+                />
+              </a>
+            </li>
+            <li class="sns-ln">
+              <a href="https://tw.linkedin.com/">
+                <img
+                  src="https://img.icons8.com/material-outlined/40/000000/linkedin--v1.png"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-bootom">
+          <p class="copyright">&copy; copyright 2021 by FrankChu</p>
+        </div>
+      </footer>
+      <!-- <a href="#" class="to-top"></a> -->
+    </div>
+  </body>
+</html>
