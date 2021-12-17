@@ -1,7 +1,7 @@
 <template>
   <section>
     <Header />
-    <div class="banner d-flex justify-content-center align-items-center">
+    <div class="banner d-flex justify-content-center align-items-center" style="margin-bottom:50px">
       <div class="banner-text">
         <vue-typed-js
           :strings="['歡迎來到炤選物~']"
@@ -51,7 +51,7 @@
                   class="items-img"
                   src="https://picsum.photos/50/50?random=11"
                 />
-                <div>哈利波特系列</div>
+                <div>哈利波特</div>
               </a>
             </li>
             <li>
@@ -60,7 +60,7 @@
                   class="items-img"
                   src="https://picsum.photos/50/50?random=12"
                 />
-                <div>寶可夢系列</div>
+                <div>pokemon</div>
               </a>
             </li>
             <li>
@@ -85,36 +85,32 @@
                   src="https://picsum.photos/150/200?random=14"
                 />
               </div>
+
               <div class="products-content p-2">
-                <h6 class="font-weight-bold">
-                  <!-- <router-link class="text-ro" :to="'/detailed/' + item.id">{{
-                    item.title
-                  }}</router-link> -->
-                  商品一
-                </h6>
+                <h6 class="font-weight-bold">商品一</h6>
                 <div>
-                  <div class="description text-truncate">商品介紹123</div>
-                </div>
-                <div class="d-flex justify-content-between">
-                  特價 NT$ 5000<del><small>原價 NT$ 8000</small></del>
+                  <div class="description text-truncate">
+                    商品介紹123商品介紹123商品介紹123商品介紹123商品介紹123商品介紹123商品介紹123
+                  </div>
                 </div>
               </div>
+
               <div class="products-footer">
+                <div class="price">
+                  <del><small>NT$ 8000</small></del>
+                  特價 NT$ 5000
+                </div>
                 <div class="products-btn">
-                  <!-- <router-link
-                    class="btn btn-outline-ro btn-block"
-                    :to="'/detailed/' + item.id"
-                  > -->
-                  <font-awesome-icon
-                    :icon="['fas', 'spinner']"
-                    spin=""
-                  ></font-awesome-icon
-                  >詳情了解
+                  <a class="btn btn-outline-secondary btn-block" href="#">
+                    <font-awesome-icon
+                      :icon="['fas', 'cat']"
+                    ></font-awesome-icon
+                    >了解詳情
+                  </a>
                   <!-- </router-link> -->
                   <a class="btn btn-outline-danger btn-block" href="#">
                     <font-awesome-icon
-                      :icon="['fas', 'spinner']"
-                      spin=""
+                      :icon="['fa', 'cart-plus']"
                     ></font-awesome-icon
                     >手刀搶購
                   </a>
@@ -144,14 +140,14 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   padding-top: 60px;
-  height: 500px;
+  height: 300px;
 }
 .banner-text {
-  background-color: rgba(0, 0, 0, 0.45);
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.534);
+  text-align: center;
+  padding: 5px;
   border-radius: 10px;
   display: flex;
-  position: relative;
 }
 .confound {
   position: absolute;
@@ -254,28 +250,54 @@ export default {
   }
   .products-content {
     width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: start;
+    h6 {
+      font-size: 25px;
+      color: #00446e;
+      font-weight: bold;
+      padding: 10px;
+    }
     @media (max-width: 768px) {
       width: 100%;
     }
   }
   .products-footer {
-    width: 20%;
+    width: 40%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     flex-direction: column;
+    .price {
+      padding-right: 8px;
+    }
     @media (max-width: 768px) {
       width: 100%;
     }
   }
   .products-btn {
     width: 100%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    a {
+      margin: 5px;
+    }
+    @media (max-width: 768px) {
+      a {
+        width: 100%;
+      }
+    }
   }
   .products-btn-disabled {
     width: 100%;
   }
   .description {
-    height: 103px;
+    // 自動換行
+    white-space: pre-line;
+    padding: 0px 10px 0px 10px;
   }
   @media (max-width: 768px) {
     display: block;
